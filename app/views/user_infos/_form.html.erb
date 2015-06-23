@@ -2,6 +2,7 @@
 	<%= render 'shared/error_messages' %>
   <%= f.input :username %>
   <%= f.input :bio %>
+  <%= image_tag @user_info.avatar.url if @user_info.avatar? %>
 	<%= f.input :avatar, accept: 'image/jpeg, image/gif, image/png' %>
 
   <%= f.button :submit %>

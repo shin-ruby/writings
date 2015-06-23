@@ -1,2 +1,4 @@
-<%= @user_info.username %>
-<%= image_tag @user_info.avatar.url if @user_info.avatar? %>
+<%= @user_info.username %><br />
+<%= image_tag @user_info.avatar.thumb.url, class: "img-circle" if @user_info.avatar? %><br />
+<%= image_tag @user_info.avatar.url, class: "img-circle" if @user_info.avatar? %><br />
+<%= @user_info.bio %>

@@ -7,6 +7,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process resize_to_limit: [400, 400]
 
+  version :thumb do
+    process resize_to_fill: [100, 100]
+  end
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
