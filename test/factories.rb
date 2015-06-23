@@ -4,4 +4,10 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
   end
+
+  factory :user_info do
+  	username "Shin"
+  	bio "Hello Word!"
+    user
+  end
 end

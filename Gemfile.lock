@@ -231,7 +231,7 @@ DEPENDENCIES
   bootswatch-rails
   byebug
   coffee-rails (~> 4.1.0)
-  devise (~> 3.4.0)
+  devise (= 3.4.1)
   factory_girl_rails (~> 4.5.0)
   font-awesome-rails (~> 4.3.0.0)
   guard-minitest (= 2.3.1)

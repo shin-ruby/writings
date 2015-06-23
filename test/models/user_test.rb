@@ -3,8 +3,6 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    #@request.env["devise.mapping"] = Devise.mappings[:user]
-    #sign_in FactoryGirl.create(:user)
     @user = FactoryGirl.create(:user)
   end
 
@@ -15,6 +13,13 @@ class UserTest < ActiveSupport::TestCase
   test "email should be present" do
     @user.email = "     "
     assert_not @user.valid?
+  end
+
+  test "associated user_info should be destroy" do
+    @user.create_user_info(username: "Shin", bio: "Hello Word")
+    assert_difference 'UserInfo.count', -1 do
+      @user.destroy
+    end
   end
 
 end

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   #get  'static_pages/help'
   get 'help' => 'static_pages#help'
 
+  resources :user_infos
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
