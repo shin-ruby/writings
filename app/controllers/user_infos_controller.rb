@@ -1,4 +1,5 @@
 class UserInfosController < ApplicationController
+	#before_action
 
 	def new
 		@user_info = UserInfo.new
@@ -12,7 +13,7 @@ class UserInfosController < ApplicationController
 			flash[:success] = "Save success!"
 			render 'edit'
 		else
-			render "new"
+			render 'new'
 		end
 	end
 
@@ -41,7 +42,7 @@ class UserInfosController < ApplicationController
   private
 
   	def user_info_params
-  		params.require(:user_info).permit(:username, :bio)
+  		params.require(:user_info).permit(:username, :bio, :avatar)
   	end
 
 end

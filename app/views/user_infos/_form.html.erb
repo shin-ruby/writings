@@ -1,7 +1,18 @@
-<%= simple_form_for(@user_info) do |f| %>
+<%= simple_form_for(@user_info, html: { multipart: true }) do |f| %>
 	<%= render 'shared/error_messages' %>
   <%= f.input :username %>
   <%= f.input :bio %>
+	<%= f.input :avatar, accept: 'image/jpeg, image/gif, image/png' %>
 
   <%= f.button :submit %>
 <% end %>
+
+<script type="text/javascript">
+	$('#user_info_avatar').bind('change', function() {
+		var size_in_megabytes = this.files[0].size/1024/1024;
+		if (size_in_megabytes > 2) {
+			alert('Maximum file size is 2MB. Please choose a smaller file.');
+		}
+	});
+</script>
+
