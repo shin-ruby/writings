@@ -3,7 +3,7 @@
     <%= link_to "WritingsHub", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav pull-right">
-        <li><%= link_to (fa_icon "home", text: "Home"),   root_path %></li>
+        <li><%= link_to (fa_icon "home", text: "Home"), root_path %></li>
         <li><%= link_to "Help",   help_path %></li>
         <li class="dropdown">
           <% if user_signed_in? %>
@@ -11,12 +11,13 @@
               Logged in as <strong><%= current_user.email %></strong>. <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li>
-                <% if @user_info = User.find(current_user.id).user_info.new_record? %>
-                  <%= link_to 'Edit profile', new_user_info_path %>
-                <% else %>
+                <% unless current_user.user_info.nil? %>
                   <%= link_to 'Edit profile', edit_user_info_path(User.find(current_user.id).user_info.id) %>
+                <% else %>
+                  <%= link_to 'Edit profile', new_user_info_path %>
                 <% end %>
               </li>
+              <li><%= link_to "Show", user_path(current_user) %></li>
               <li><%= link_to 'Edit password', edit_user_registration_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>

@@ -1,0 +1,28 @@
+<% provide(:title, @user.username) %>
+
+<div class="row">
+  <aside class="col-md-12">
+    <section class="user_info">
+      <h1>
+        <% unless @user.user_info.nil? %>
+          <%= image_tag(@user.user_info.avatar.thumb.url, class: "img-circle") %>
+				<% else %>
+        	<%= image_tag("square-image.png", class: "img-circle") %>
+        <% end %>
+				<%= @user.username %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+<%= link_to "New writing", new_writing_path %>
+
+<hr />
+<div class="row">
+	<% if @user.writings.any? %>
+		<ul>
+			<%= render @writings %>
+		</ul>
+		<%= will_paginate @writings %>
+	<% end %>
+</div>

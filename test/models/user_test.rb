@@ -16,8 +16,15 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "associated user_info should be destroy" do
-    @user.create_user_info(username: "Shin", bio: "Hello Word")
+    @user.create_user_info(bio: "Hello Word")
     assert_difference 'UserInfo.count', -1 do
+      @user.destroy
+    end
+  end
+
+  test "associated writing should be destroy" do
+    @user.writings.create!(title: "Writing Title", content: "Text some content", photo: "img_url")
+    assert_difference 'Writing.count', -1 do
       @user.destroy
     end
   end

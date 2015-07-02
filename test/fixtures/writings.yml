@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Hello first
+  content: First content rubyonrails
+  photo: img_url/1
+  created_at: <%= 10.minutes.ago %>
+
+
+two:
+  title: Hello two
+  content: Two content PHP
+  photo: img_url/2
+  created_at: <%= Time.zone.now %>
+
+three:
+  title: Hello three
+  content: Threecontent Java
+  photo: img_url/3
+  created_at: <%= 1.years.ago %>
+

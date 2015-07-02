@@ -1,12 +1,160 @@
 <% provide(:title, "Home") %>
-<div class="center jumbotron">
-  <h1>Welcome to the Writings Hub</h1>
 
-  <h2>
-    This is the home page for the
-    <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+  	<h3>Welcome to the Writings Hub</h3>
+  	<%= link_to (fa_icon "sign-in", text: "Sign up now!"), new_user_registration_path, class: "btn btn-sm btn-primary" %>
+  	<hr>
+    <div class="writing-list">
+      <div class="media">
+        <div class="media-left">
+          <%= link_to image_tag( "stevie.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
+          2 days ago
+        </div>
+      </div>
+      <h3><%= link_to "Start automating your business tasks with Slack", "#" %></h3>
+      <p><%= link_to "With its historic ruling on Marriage Equality Friday, the U.S. Supreme Court finally caught up to the movement of the...", "#" %></p>
+      <%= link_to "Continue reading", "#", class: "writing-list-link" %>
+      <ul class="list-inline">
+        <li><i class="fa fa-eye"></i>1,322</li>
+        <li><i class="fa fa-comment"></i>23</li>
+        <li><i class="fa fa-heart"></i>289</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="writing-list">
+      <div class="media">
+        <div class="media-left">
+          <%= link_to image_tag( "daniel.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
+          2 days ago
+        </div>
+      </div>
+      <h3><%= link_to "Like photo", "#" %></h3>
+      <p><%= link_to image_tag("writing-ad-1.jpg"), "#" %></p>
+      <%= link_to "Continue reading", "#", class: "writing-list-link" %>
+      <ul class="list-inline">
+        <li><i class="fa fa-eye"></i>1,322</li>
+        <li><i class="fa fa-comment"></i>23</li>
+        <li><i class="fa fa-heart"></i>289</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="writing-list">
+      <div class="media">
+        <div class="media-left">
+          <%= link_to image_tag( "veronika.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
+          2 days ago
+        </div>
+      </div>
+      <h3><%= link_to "Start automating your business tasks with Slack", "#" %></h3>
+      <p><%= link_to "With its historic ruling on Marriage Equality Friday, the U.S. Supreme Court finally caught up to the movement of the...", "#" %></p>
+      <%= link_to "Continue reading", "#", class: "writing-list-link" %>
+      <ul class="list-inline">
+        <li><i class="fa fa-eye"></i>1,322</li>
+        <li><i class="fa fa-comment"></i>23</li>
+        <li><i class="fa fa-heart"></i>289</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-3 home-right">
+  	<div class="page-header">
+      <h4>Tags</h4>
+    </div>
+    <ul class="list-inline" id="tags">
+      <li>IT</li>
+      <li>E-commerce</li>
+      <li>WeiChat</li>
+      <li>Weibo</li>
+      <li>Car</li>
+      <li>Medical</li>
+      <li>ios</li>
+      <li>php</li>
+      <li>Ruby</li>
+      <li>Ruby on Rails</li>
+      <li>CSS</li>
+      <li>HTML5</li>
+      <li>Android</li>
+      <li>Vim</li>
+      <li>Git</li>
+      <li>Go</li>
+      <li>IT</li>
+      <li>E-commerce</li>
+      <li>WeiChat</li>
+      <li>Weibo</li>
+      <li>Car</li>
+      <li>Medical</li>
+      <li>ios</li>
+      <li>php</li>
+      <li>Ruby</li>
+      <li>Ruby on Rails</li>
+      <li>CSS</li>
+      <li>HTML5</li>
+      <li>Android</li>
+      <li>Vim</li>
+      <li>Git</li>
+      <li>Go</li>
+      <li>IT</li>
+      <li>E-commerce</li>
+      <li>WeiChat</li>
+      <li>Weibo</li>
+      <li>Car</li>
+      <li>Medical</li>
+      <li>ios</li>
+      <li>php</li>
+      <li>Ruby</li>
+      <li>Ruby on Rails</li>
+      <li>CSS</li>
+      <li>HTML5</li>
+      <li>Android</li>
+      <li>Vim</li>
+      <li>Git</li>
+      <li>Go</li>
+      <li>IT</li>
+      <li>E-commerce</li>
+      <li>WeiChat</li>
+      <li>Weibo</li>
+      <li>Car</li>
+      <li>Medical</li>
+      <li>ios</li>
+      <li>php</li>
+      <li>Ruby</li>
+      <li>Ruby on Rails</li>
+      <li>CSS</li>
+      <li>HTML5</li>
+      <li>Android</li>
+      <li>Vim</li>
+      <li>Git</li>
+      <li>Go</li>
+    </ul>
+    
+    <div class="page-header">
+      <h4>Top Writings</h4>
+    </div>
+    <ol>
+      <li>8 Things Every Person Should Do Before</li>
+      <small><%= link_to "Shin Zhang", "#" %></small>
+      <hr>
+      <li>The end of interest rates</li>
+      <small><%= link_to "Sindy", "#" %></small>
+      <hr>
+      <li>Technology and The Evolution of Storytelling</li>
+      <small><%= link_to "Tom", "#" %></small>
+      <hr>
+      <li>Start automating your business tasks with...</li>
+      <small><%= link_to "Michael Luo", "#" %></small>
+      <hr>
+      <li>The Truth About Blogging</li>
+      <small><%= link_to "Cynthia Wang", "#" %></small>
+    </ol>
+  </div>
 </div>
+

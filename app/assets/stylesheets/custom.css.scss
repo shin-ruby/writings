@@ -31,12 +31,26 @@ textarea {
   resize: vertical;
 }
 
+a {
+  color: #333333;
+  &:hover {
+    color: #333333;
+    text-decoration: none;
+  }
+}
+
 .center {
   text-align: center;
   h1 {
     margin-bottom: 10px;
   }
 }
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 
 /* typography */
 
@@ -123,6 +137,97 @@ footer {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: center;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+      font-weight: bold;
+    }
+  }
+  .img-circle {
+    float: center;
+    margin-right: 10px;
+    margin-top: 15px;
+  }
+}
+
+/* media */
+
+.writing-list {
+  .writing-list-link {
+    color: #D9230F;
+  }
+  i {
+    margin-right: 6px;
+  }
+}
+
+/* home page */
+
+.home-right {
+  ol {
+    margin-left: -10px;
+    hr {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* writings show */
+
+.writings-show {
+  h1 {
+    //font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+  }
+  .writings-content {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    //font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: .01rem;
+    font-weight: 200;
+    font-style: normal;
+  }
+  .social {
+    font-size: 16px;
+    i {
+      margin-right: 12px;
+    }
+  }
+  .media {
+    p{
+      font-weight: 200;
+      font-size: 16px;
+    }
+  }
+}
+
+#tag_cloud {
+  line-height: 1.6em;
 }
 
 /* miscellaneous */

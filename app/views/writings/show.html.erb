@@ -1,0 +1,90 @@
+<div class="row writings-show">
+  <div class="col-md-8 col-md-offset-2">
+  	<h1>Thoughts on Design</h1>
+  	<div class="writings-content">
+  		<p>I was lucky enough to meet with two entrepreneurs turned politicians in Israel — the Education Minister, Naftali Bennett and the mayor of Jerusalem, Nir Barkat. Bennett started a security startup that he sold in 2005 and Barkat was a founder of an antivirus software company as well as a successful angel investor. We spoke about ways the government could bring in design and technology, be data-informed, iterate on what’s working, and even use MOOCs to supplement teaching shortages. We also discussed where the private sector was better suited to tackle problems and how they could best work with the private sector.</p>
+	  	<p>During one of my talks here in Israel a woman asked me why we don’t see better designed products and services in healthcare. I quickly polled the room of 80 designers and engineers — how many of you have domain expertise or know someone who does in healthcare? After a few moments of silence and coughing, three hands went up. I decided to drive the point home — if we want to see better designed healthcare products we need to start by connecting designers and healthcare experts.</p>
+	  	<p>Though the response in that room is quite common there are people working on bringing together designers and engineers with domain experts to create change. One platform I particularly love is Code for America, an organization that wants to change how government delivers services. I recently met with a couple companies that started as Code for America projects and even early on their solutions are orders of magnitude better than currently available services which require navigating inefficient bureaucracy and working through outdated processes.</p>
+	  	<p>And I believe this is only the beginning. Recognizing that people were naturally forming companies after participating in the program, Code for America has now expanded their platform and built an accelerator and incubator to explicitly support developing great companies. If you’re interested in changing the way government works Code for America is a great place to start.</p>
+  	</div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="list-inline social">
+          <li><i class="fa fa-eye"></i>1,322</li>
+          <li><i class="fa fa-heart"></i>289</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-md-offset-5">
+        <div class="media">
+          <div class="media-left">
+            <%= link_to image_tag( "stevie.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
+            2 days ago
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <button class="btn btn-primary" type="submit">Follow</button>
+      </div>
+    </div>
+
+    <br>
+    <h4>Responses</h4>
+    <hr>
+    <p><i class="fa fa-comment-o"></i>Write a respense...</p>
+    <hr>
+    <div class="media">
+      <div class="media-left">
+        <%= link_to image_tag( "stevie.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
+        <p>During one of my talks here in Israel a woman asked me why we don’t see better designed products and services in healthcare. </p>
+        <p>2 days ago</p>
+      </div>
+    </div>
+    <hr>
+    <div class="media">
+      <div class="media-left">
+        <%= link_to image_tag( "daniel.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
+        <p>And I believe this is only the beginning. Recognizing that people were naturally forming companies after participating in the program, Code for America has now expanded their platform and built an accelerator and incubator to explicitly support developing great companies. If you’re interested in changing the way government works Code for America is a great place to start.</p>
+        <p>2 days ago</p>
+      </div>
+    </div>
+		<hr>
+		<div class="media">
+      <div class="media-left">
+        <%= link_to image_tag( "veronika.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
+        <p>And I believe this is only the beginning. Recognizing that people were naturally forming companies after participating in the program, Code for America has now expanded their platform and built an accelerator and incubator to explicitly support developing great companies. If you’re interested in changing the way government works Code for America is a great place to start.</p>
+     		<p>2 days ago</p>
+      </div>
+    </div>
+		<hr>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<%= @writing.title %><br>
+<%= @writing.content %><br>
+<%= image_tag @writing.photo %>
+  <% if current_user?(@writing.user) %>
+    <%= link_to "delete", @writing, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>

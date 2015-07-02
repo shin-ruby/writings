@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, :only => [:show]
+  
   root 'static_pages#home'
 
   #get  'static_pages/help'
   get 'help' => 'static_pages#help'
 
   resources :user_infos
+  resources :writings
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

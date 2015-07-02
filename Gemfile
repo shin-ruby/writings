@@ -8,6 +8,8 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bootswatch-rails'
 gem 'font-awesome-rails', '~> 4.3.0.0'
 gem 'simple_form', '~> 3.1.0'
+gem 'will_paginate', '~> 3.0.7'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -17,6 +19,8 @@ gem 'devise', '3.4.1'
 
 gem 'carrierwave',          '~> 0.10.0'
 gem 'mini_magick',          '~> 4.2.7'
+
+gem 'faker', '~> 1.4.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,6 +1,5 @@
 <%= simple_form_for(@user_info, html: { multipart: true }) do |f| %>
-	<%= render 'shared/error_messages' %>
-  <%= f.input :username %>
+	<%= render 'shared/error_messages', object: f.object%>
   <%= f.input :bio %>
   <%= image_tag @user_info.avatar.url if @user_info.avatar? %>
 	<%= f.input :avatar, accept: 'image/jpeg, image/gif, image/png' %>
