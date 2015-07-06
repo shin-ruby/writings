@@ -1,0 +1,32 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-xs-4">
+    <section>
+      <h1><%= @user.username %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <% unless user.user_info.nil? %>
+              <%= link_to image_tag(user.user_info.avatar.thumb.url, size: 30, class: "img-circle"), user %>
+            <% else %>
+              <%= link_to image_tag("square-image.png", size: "30", class: "img-circle") %>
+            <% end %>
+          <%end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class="col-xs-7">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>

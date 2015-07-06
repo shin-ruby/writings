@@ -12,7 +12,11 @@
 				<%= @user.username %>
       </h1>
     </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
   </aside>
+  <%= render 'follow_form' if user_signed_in? %>
 </div>
 
 <%= link_to "New writing", new_writing_path %>

@@ -29,4 +29,15 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "should follow and unfollow a user" do
+    shin = @user
+    tom = FactoryGirl.create(:user, username: "Tom", email: 'tom@gmail.com', password: "password", password_confirmation: "password")
+    assert_not shin.following?(tom)
+    shin.follow(tom)
+    assert shin.following?(tom)
+    assert tom.followers.include?(shin)
+    shin.unfollow(tom)
+    assert_not shin.following?(tom)
+  end
+
 end

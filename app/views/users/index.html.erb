@@ -1,0 +1,19 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+<ul class="users">
+	<% @users.each do |user| %>
+	  <li>
+			<%= link_to user.username, user %>
+			<% unless user.user_info.nil? %>
+        <%= image_tag(@user.user_info.avatar.thumb.url, size: "30", class: "img-circle") %>
+			<% else %>
+      	<%= image_tag("square-image.png", size: "30", class: "img-circle") %>
+      <% end %>
+			<%# if current_user.admin? && !current_user?(user) %>
+				| <%#= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
+			<%# end %>
+	  </li>
+	<% end %>
+</ul>
+
+<%= will_paginate %>

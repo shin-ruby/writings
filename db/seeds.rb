@@ -28,3 +28,11 @@ users = User.order(:created_at).take(6)
 	photo = Faker::Avatar.image("my-own-slug")
 	users.each { |user| user.writings.create!(title: title, content: content, photo: photo)}
 end
+
+#Following relationships
+users = User.all
+user = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }

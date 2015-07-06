@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, :only => [:show]
+  resources :users, :only => [:show, :index] do
+     member do
+      get :following, :followers
+    end
+  end
   
   root 'static_pages#home'
 
@@ -9,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :user_infos
   resources :writings
+  resources :relationships, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
