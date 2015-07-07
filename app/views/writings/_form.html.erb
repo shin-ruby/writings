@@ -1,12 +1,13 @@
 <%= simple_form_for(@writing, html: { multipart: true }) do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
-  <%= f.input :title %>
-  <%= f.input :content %>
+  <%= f.input :title, placeholder: 'Title' %>
+  <%= f.input :content, as: :text, input_html: { id: "editor" } %>
   <%= image_tag @writing.photo.url if @writing.photo? %>
   <%= f.input :photo, accept: 'image/jpeg, image/gif, image/png' %>
 
   <%= f.button :submit %>
 <% end %>
+
 
 <script type="text/javascript">
 	$('#writing_photo').bind('change', function() {
@@ -15,4 +16,22 @@
 			alert('Maximum file size is 5MB. Please choose a smaller file.');
 		}
 	});
+
+
+	var editor;
+
+	editor = new Simditor({
+	  textarea: $('#editor'),
+	  placeholder: '',
+	  defaultImage: 'images/image.png',
+	  params: {},
+	  upload: true,
+	  tabIndent: true,
+	  toolbar: true,
+	  toolbarFloat: true,
+	  toolbarFloatOffset: 0,
+	  toolbarHidden: false,
+	  pasteImage: false
+	});
+
 </script>

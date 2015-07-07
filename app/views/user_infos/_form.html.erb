@@ -1,11 +1,27 @@
-<%= simple_form_for(@user_info, html: { multipart: true }) do |f| %>
-	<%= render 'shared/error_messages', object: f.object%>
-  <%= f.input :bio %>
-  <%= image_tag @user_info.avatar.url if @user_info.avatar? %>
-	<%= f.input :avatar, accept: 'image/jpeg, image/gif, image/png' %>
+<div class="row">
+	<div class="col-md-4 col-md-offset-2">
+		<%= simple_form_for(@user_info, html: { multipart: true }) do |f| %>
+			<%= render 'shared/error_messages', object: f.object%>
+			<div class="row">
+				<div class="col-md-6">
+					<% if @user_info.avatar? %>
+						<%= image_tag @user_info.avatar.url, class: "img-circle", size: "180" %>
+					<% else %>
+						<%= image_tag("square-image.png", class: "img-circle", size: "180") %>
+					<% end %>
+				</div>
+				<div class="col-md-6">
+					<%= f.input :avatar, label: 'Update Avatar', rows: "140", accept: 'image/jpeg, image/gif, image/png' %>
+				</div>
+			</div>
+			
+			<p><%= current_user.username %></p>
+		  <%= f.input :bio, as: :text %>
+		  <%= f.button :submit %>
+		<% end %>
+	</div>
+</div>
 
-  <%= f.button :submit %>
-<% end %>
 
 <script type="text/javascript">
 	$('#user_info_avatar').bind('change', function() {

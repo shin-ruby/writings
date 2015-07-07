@@ -2,8 +2,13 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-1">
-  	<h3>Welcome to the Writings Hub</h3>
-  	<%= link_to (fa_icon "sign-in", text: "Sign up now!"), new_user_registration_path, class: "btn btn-sm btn-primary" %>
+    <% if user_signed_in? %>
+      <h3>Share your writings!</h3>
+      <%= link_to (fa_icon "pencil", text: "Write here..."), new_writing_path, class: "btn btn-sm btn-info" %>
+    <% else %>
+    	<h3>Welcome to the Writings Hub</h3>
+    	<%= link_to (fa_icon "sign-in", text: "Sign up now!"), new_user_registration_path, class: "btn btn-sm btn-primary" %>
+    <% end %>
   	<hr>
     <div class="writing-list">
       <div class="media">
@@ -15,7 +20,7 @@
           2 days ago
         </div>
       </div>
-      <h3><%= link_to "Start automating your business tasks with Slack", "#" %></h3>
+      <h3><%= link_to "Start automating your business tasks with Slack", writing_path(1) %></h3>
       <p><%= link_to "With its historic ruling on Marriage Equality Friday, the U.S. Supreme Court finally caught up to the movement of the...", "#" %></p>
       <%= link_to "Continue reading", "#", class: "writing-list-link" %>
       <ul class="list-inline">

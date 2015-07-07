@@ -51,6 +51,10 @@ hr {
   margin-bottom: 30px;
 }
 
+i {
+  margin-right: 12px;
+}
+
 
 /* typography */
 
@@ -85,14 +89,24 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.6em;
   color: #777777;
   letter-spacing: -1px;
-  padding-top: 4px;
+  padding-top: 5px;
   font-weight: bold;
   &:hover {
     color: #777777;
     text-decoration: none;
+  }
+}
+
+header {
+  nav {
+    margin-top: 2px;
+  }
+  .form-control {
+    height: 28px;
+    margin-top: 4px;
   }
 }
 
@@ -221,6 +235,10 @@ aside {
 
 /* writings show */
 
+  .form-control {
+
+  }
+
 .writings-show {
   h1 {
     //font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
@@ -237,9 +255,6 @@ aside {
   }
   .social {
     font-size: 16px;
-    i {
-      margin-right: 12px;
-    }
   }
   .media {
     p{
