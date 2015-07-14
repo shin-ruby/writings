@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   get 'help' => 'static_pages#help'
 
   resources :user_infos
-  resources :writings
+
+  resources :writings do
+    resources :comments
+  end
+  
   resources :relationships, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,14 +3,13 @@
 <div class="row">
   <aside class="col-md-12">
     <section class="user_info">
-      <h1>
         <% unless @user.user_info.nil? %>
           <%= image_tag(@user.user_info.avatar.thumb.url, class: "img-circle") %>
 				<% else %>
         	<%= image_tag("square-image.png", class: "img-circle") %>
         <% end %>
-				<%= @user.username %>
-      </h1>
+        <br>
+				<h1><%= @user.username %></h1>
     </section>
     <section class="stats">
       <%= render 'shared/stats' %>

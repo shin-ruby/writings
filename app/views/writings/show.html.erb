@@ -45,50 +45,16 @@
         <div class="page-header">
           <h4>Responses</h4>
         </div>
+        
+        <%= render @writing.comments %>
 
-        <div class="media">
-          <div class="media-left">
-            <%= link_to image_tag( "stevie.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
-            <p>During one of my talks here in Israel a woman asked me why we don’t see better designed products and services in healthcare. </p>
-            <p>2 days ago</p>
-          </div>
-        </div>
-        <hr>
-        <div class="media">
-          <div class="media-left">
-            <%= link_to image_tag( "daniel.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
-            <p>And I believe this is only the beginning. Recognizing that people were naturally forming companies after participating in the program, Code for America has now expanded their platform and built an accelerator and incubator to explicitly support developing great companies. If you’re interested in changing the way government works Code for America is a great place to start.</p>
-            <p>2 days ago</p>
-          </div>
-        </div>
-    		<hr>
-    		<div class="media">
-          <div class="media-left">
-            <%= link_to image_tag( "veronika.jpg", size: "35x35", alt: "avatar", class: "img-circle" ), root_path %>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading"><%= link_to "Shin Zhang", "#" %></h4>
-            <p>And I believe this is only the beginning. Recognizing that people were naturally forming companies after participating in the program, Code for America has now expanded their platform and built an accelerator and incubator to explicitly support developing great companies. If you’re interested in changing the way government works Code for America is a great place to start.</p>
-         		<p>2 days ago</p>
-          </div>
-        </div>
-        <hr>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
         <p><i class="fa fa-comment-o"></i>Write a respense...</p>
-        <div class="form-group">
-          <textarea class="form-control" rows="4"></textarea>
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <%= render "comments/form" %>
       </div>
     </div>
 
