@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
   
   resources :relationships, only: [:create, :destroy]
+  get 'tags/:tag', to: 'writings#index', as: :tag
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

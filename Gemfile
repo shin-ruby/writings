@@ -22,6 +22,8 @@ gem 'mini_magick',          '~> 4.2.7'
 
 gem 'faker', '~> 1.4.3'
 
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

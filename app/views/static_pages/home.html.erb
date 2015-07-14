@@ -20,7 +20,7 @@
           2 days ago
         </div>
       </div>
-      <h3><%= link_to "Start automating your business tasks with Slack", writing_path(1) %></h3>
+      <h3><%= link_to "Start automating your business tasks with Slack", writing_path(302) %></h3>
       <p><%= link_to "With its historic ruling on Marriage Equality Friday, the U.S. Supreme Court finally caught up to the movement of the...", "#" %></p>
       <%= link_to "Continue reading", "#", class: "writing-list-link" %>
       <ul class="list-inline">
@@ -74,73 +74,13 @@
   	<div class="page-header">
       <h4>Tags</h4>
     </div>
-    <ul class="list-inline" id="tags">
-      <li>IT</li>
-      <li>E-commerce</li>
-      <li>WeiChat</li>
-      <li>Weibo</li>
-      <li>Car</li>
-      <li>Medical</li>
-      <li>ios</li>
-      <li>php</li>
-      <li>Ruby</li>
-      <li>Ruby on Rails</li>
-      <li>CSS</li>
-      <li>HTML5</li>
-      <li>Android</li>
-      <li>Vim</li>
-      <li>Git</li>
-      <li>Go</li>
-      <li>IT</li>
-      <li>E-commerce</li>
-      <li>WeiChat</li>
-      <li>Weibo</li>
-      <li>Car</li>
-      <li>Medical</li>
-      <li>ios</li>
-      <li>php</li>
-      <li>Ruby</li>
-      <li>Ruby on Rails</li>
-      <li>CSS</li>
-      <li>HTML5</li>
-      <li>Android</li>
-      <li>Vim</li>
-      <li>Git</li>
-      <li>Go</li>
-      <li>IT</li>
-      <li>E-commerce</li>
-      <li>WeiChat</li>
-      <li>Weibo</li>
-      <li>Car</li>
-      <li>Medical</li>
-      <li>ios</li>
-      <li>php</li>
-      <li>Ruby</li>
-      <li>Ruby on Rails</li>
-      <li>CSS</li>
-      <li>HTML5</li>
-      <li>Android</li>
-      <li>Vim</li>
-      <li>Git</li>
-      <li>Go</li>
-      <li>IT</li>
-      <li>E-commerce</li>
-      <li>WeiChat</li>
-      <li>Weibo</li>
-      <li>Car</li>
-      <li>Medical</li>
-      <li>ios</li>
-      <li>php</li>
-      <li>Ruby</li>
-      <li>Ruby on Rails</li>
-      <li>CSS</li>
-      <li>HTML5</li>
-      <li>Android</li>
-      <li>Vim</li>
-      <li>Git</li>
-      <li>Go</li>
-    </ul>
     
+    <div id="tag_cloud">
+      <% tag_cloud Writing.tag_counts, %w{s m l} do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+    </div>
+
     <div class="page-header">
       <h4>Top Writings</h4>
     </div>

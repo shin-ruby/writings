@@ -49,7 +49,7 @@ class WritingsController < ApplicationController
 	private
 
 		def writing_params
-			params.require(:writing).permit(:title, :content, :photo)
+			params.require(:writing).permit(:title, :content, :photo, :tag_list)
 		end
 
 		def correct_user

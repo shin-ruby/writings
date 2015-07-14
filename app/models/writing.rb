@@ -5,8 +5,10 @@ class Writing < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
   validates :user_id, presence: true
   validates :title, presence: true, length: {maximum: 200}
-
   validate :photo_size
+
+  acts_as_taggable
+  #acts_as_taggable_on :skills, :interests
   
 
   private

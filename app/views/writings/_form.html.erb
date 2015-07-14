@@ -3,6 +3,7 @@
   <%= f.input :title, placeholder: 'Title' %>
   <%= f.input :content, as: :text, input_html: { id: "editor" } %>
   <%= image_tag @writing.photo.url if @writing.photo? %>
+  <%= f.input :tag_list, label: 'Tags' %>
   <%= f.input :photo, accept: 'image/jpeg, image/gif, image/png' %>
 
   <%= f.button :submit %>
