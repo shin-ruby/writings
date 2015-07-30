@@ -3,7 +3,8 @@ class WritingsController < ApplicationController
 	before_action :correct_user, only: [:destroy, :edit] #no test
 
 	def index
-		@writings = current_user.writings
+		writings = Writing.all
+		#@writings = current_user.writings
 	end
 
 	def create
@@ -17,7 +18,8 @@ class WritingsController < ApplicationController
 	end
 
 	def show
-		@writing = current_user.writings.find(params[:id])
+		@writing = Writing.find(params[:id])
+		#@writing = current.writings.find(params[:id])
 	end
 
 	def new
@@ -49,7 +51,7 @@ class WritingsController < ApplicationController
 	private
 
 		def writing_params
-			params.require(:writing).permit(:title, :content, :photo, :tag_list)
+			params.require(:writing).permit(:title, :content, :photo, :tag_list, :comments_count)
 		end
 
 		def correct_user

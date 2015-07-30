@@ -1,6 +1,8 @@
 class Writing < ActiveRecord::Base
   belongs_to :user
   has_many :comments
+  has_many :likers, dependent: :destroy
+
   default_scope -> { order created_at: :desc }
   mount_uploader :photo, PhotoUploader
   validates :user_id, presence: true
@@ -9,7 +11,7 @@ class Writing < ActiveRecord::Base
 
   acts_as_taggable
   #acts_as_taggable_on :skills, :interests
-  
+
 
   private
 

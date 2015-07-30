@@ -1,0 +1,7 @@
+<%= form_for(Liker.new, remote: true) do |f| %>
+  <div>
+  	<%= hidden_field_tag :writing_id, @writing.id %>
+  </div>
+
+	<%= f.submit "Like", class: "btn btn-primary" %>
+<% end %>

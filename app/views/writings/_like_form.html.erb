@@ -1,0 +1,10 @@
+<i class="fa fa-heart"></i>
+<div id="like_form">
+		<% if Liker.find_by(user_id: current_user)  %>
+			<%= render 'unliker' %>
+		<% else %>
+			<%= render 'liker' %>
+		<% end %>
+</div>
+<strong id="likers"><%= Liker.where(writing_id: @writing).count %></strong>
+

@@ -1,0 +1,2 @@
+$("#like_form").html("<%= j(render('writings/liker')) %>")
+$("#likers").html("<%= Liker.where(writing_id: @writing).count %>")

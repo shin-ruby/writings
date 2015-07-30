@@ -21,12 +21,11 @@
   
     <div class="row">
       <div class="col-md-12">
-      	<h1>Thoughts on Design</h1>
+      	<h1><%= @writing.title %></h1>
       	<div class="writings-content">
-      		<p>I was lucky enough to meet with two entrepreneurs turned politicians in Israel — the Education Minister, Naftali Bennett and the mayor of Jerusalem, Nir Barkat. Bennett started a security startup that he sold in 2005 and Barkat was a founder of an antivirus software company as well as a successful angel investor. We spoke about ways the government could bring in design and technology, be data-informed, iterate on what’s working, and even use MOOCs to supplement teaching shortages. We also discussed where the private sector was better suited to tackle problems and how they could best work with the private sector.</p>
-    	  	<p>During one of my talks here in Israel a woman asked me why we don’t see better designed products and services in healthcare. I quickly polled the room of 80 designers and engineers — how many of you have domain expertise or know someone who does in healthcare? After a few moments of silence and coughing, three hands went up. I decided to drive the point home — if we want to see better designed healthcare products we need to start by connecting designers and healthcare experts.</p>
-    	  	<p>Though the response in that room is quite common there are people working on bringing together designers and engineers with domain experts to create change. One platform I particularly love is Code for America, an organization that wants to change how government delivers services. I recently met with a couple companies that started as Code for America projects and even early on their solutions are orders of magnitude better than currently available services which require navigating inefficient bureaucracy and working through outdated processes.</p>
-    	  	<p>And I believe this is only the beginning. Recognizing that people were naturally forming companies after participating in the program, Code for America has now expanded their platform and built an accelerator and incubator to explicitly support developing great companies. If you’re interested in changing the way government works Code for America is a great place to start.</p>
+      		<p><%= @writing.content %></p>
+          <p><%= image_tag @writing.photo %></p>
+          <p>Tags: <%= raw @writing.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
       	</div>
       </div>
     </div>
@@ -35,7 +34,8 @@
       <div class="col-md-12">
         <ul class="list-inline social">
           <li><i class="fa fa-eye"></i>1,322</li>
-          <li><i class="fa fa-heart"></i>289</li>
+          <li><i class="fa fa-comment"></i><%= comments_count(@writing) %></li>
+          <li><%= render 'like_form' %></li>
         </ul>
       </div>
     </div>
@@ -59,13 +59,11 @@
     </div>
 
 
-    <%= @writing.title %><br>
-    <%= @writing.content %><br>
-    <%= image_tag @writing.photo %>
-    <p>Tags: <%= raw @writing.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+
     <% if current_user?(@writing.user) %>
       <%= link_to "delete", @writing, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
+
   </div>
 </div>
 

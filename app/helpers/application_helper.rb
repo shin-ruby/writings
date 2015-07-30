@@ -21,5 +21,9 @@ module ApplicationHelper
     else name
     end
 	end
+
+	def comments_count(writing)
+		writing.comments_count
+	end
 	
 end

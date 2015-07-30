@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714025915) do
+ActiveRecord::Schema.define(version: 20150723075521) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "commenter"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20150714025915) do
   add_index "comments", ["user_id", "created_at"], name: "index_comments_on_user_id_and_created_at"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
   add_index "comments", ["writing_id"], name: "index_comments_on_writing_id"
+
+  create_table "likers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "writing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "likers", ["user_id", "writing_id"], name: "index_likers_on_user_id_and_writing_id", unique: true
+  add_index "likers", ["user_id"], name: "index_likers_on_user_id"
+  add_index "likers", ["writing_id"], name: "index_likers_on_writing_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
@@ -90,8 +101,9 @@ ActiveRecord::Schema.define(version: 20150714025915) do
     t.text     "content"
     t.string   "photo"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "comments_count"
   end
 
   add_index "writings", ["user_id", "created_at"], name: "index_writings_on_user_id_and_created_at"
