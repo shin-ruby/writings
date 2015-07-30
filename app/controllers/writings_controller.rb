@@ -20,6 +20,7 @@ class WritingsController < ApplicationController
 	def show
 		@writing = Writing.find(params[:id])
 		#@writing = current.writings.find(params[:id])
+		Writing.increment_counter(:view_count, params[:id])
 	end
 
 	def new
